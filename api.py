@@ -33,15 +33,15 @@ def popola_tabelle():
         # Popola la tabella "Uomini"
         for uomo in uomini:
             uomo["id_gruppo"] = id_gruppo  # Assegna l'ID del gruppo generato
-            query = "INSERT INTO Uomini (id_gruppo, numero_bambini, numero_adolescenti, numero_adulti, numero_anziani, numero_disabilita_motorie, numero_disabilita_visive, numero_disabilita_uditive, numero_italiani, numero_stranieri) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            values = (uomo["id_gruppo"], uomo["numero_bambini"], uomo["numero_adolescenti"], uomo["numero_adulti"], uomo["numero_anziani"], uomo["numero_disabilita_motorie"], uomo["numero_disabilita_visive"], uomo["numero_disabilita_uditive"], uomo["numero_italiani"], uomo["numero_stranieri"])
+            query = "INSERT INTO Uomini (id_gruppo, numero_bambini, numero_adolescenti, numero_adulti, numero_anziani, numero_disabilita_motorie, numero_disabilita_visive, numero_disabilita_uditive, numero_italiani, numero_inglesi, numero_tedeschi, numero_spagnoli, numero_indiani, numero_giapponesi, numero_francesi, numero_cinesi) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            values = (uomo["id_gruppo"], uomo["numero_bambini"], uomo["numero_adolescenti"], uomo["numero_adulti"], uomo["numero_anziani"], uomo["numero_disabilita_motorie"], uomo["numero_disabilita_visive"], uomo["numero_disabilita_uditive"], uomo["numero_italiani"], uomo["numero_inglesi"], uomo["numero_tedeschi"], uomo["numero_spagnoli"], uomo["numero_indiani"], uomo["numero_giapponesi"], uomo["numero_francesi"], uomo["numero_cinesi"] )
             cursor.execute(query, values)
         
         # Popola la tabella "Donne"
         for donna in donne:
             donna["id_gruppo"] = id_gruppo  # Assegna l'ID del gruppo generato
-            query = "INSERT INTO Donne (id_gruppo, numero_bambine, numero_adolescenti, numero_adulte, numero_anziane, numero_disabilita_motorie, numero_disabilita_visive, numero_disabilita_uditive, numero_italiane, numero_straniere) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            values = (donna["id_gruppo"], donna["numero_bambine"], donna["numero_adolescenti"], donna["numero_adulte"], donna["numero_anziane"], donna["numero_disabilita_motorie"], donna["numero_disabilita_visive"], donna["numero_disabilita_uditive"], donna["numero_italiane"], donna["numero_straniere"])
+            query = "INSERT INTO Donne (id_gruppo, numero_bambine, numero_adolescenti, numero_adulte, numero_anziane, numero_disabilita_motorie, numero_disabilita_visive, numero_disabilita_uditive, numero_italiane, numero_inglesi, numero_tedesche, numero_spagnole, numero_indiane, numero_giapponesi, numero_francesi, numero_cinesi) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            values = (donna["id_gruppo"], donna["numero_bambine"], donna["numero_adolescenti"], donna["numero_adulte"], donna["numero_anziane"], donna["numero_disabilita_motorie"], donna["numero_disabilita_visive"], donna["numero_disabilita_uditive"], donna["numero_italiane"], donna["numero_inglesi"], donna["numero_tedesche"], donna["numero_spagnole"], donna["numero_indiane"], donna["numero_giapponesi"], donna["numero_francesi"], donna["numero_cinesi"])
             cursor.execute(query, values)
 
         db.commit()
