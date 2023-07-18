@@ -25,8 +25,8 @@ def popola_tabelle():
         cursor = db.cursor()
 
         # Popola la tabella "Gruppi" e ottieni l'ID generato automaticamente
-        query = "INSERT INTO Gruppi (data_visita, ora_inizio_visita, numero_componenti, numero_conoscenti) VALUES (%s, %s, %s, %s) RETURNING id_gruppo"
-        values = (gruppo["data_visita"], gruppo["ora_inizio_visita"], gruppo["numero_componenti"], gruppo["numero_conoscenti"])
+        query = "INSERT INTO Gruppi (data_visita, ora_inizio_visita, componenti_gruppo, gruppi_presenti) VALUES (%s, %s, %s, %s) RETURNING id_gruppo"
+        values = (gruppo["data_visita"], gruppo["ora_inizio_visita"], gruppo["componenti_gruppo"], gruppo["gruppi_presenti"])
         cursor.execute(query, values)
         id_gruppo = cursor.fetchone()[0]  # Ottieni l'ID generato per il gruppo appena inserito
         
